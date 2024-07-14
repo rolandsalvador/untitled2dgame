@@ -92,10 +92,10 @@ radius = 81.0062
 script = ExtResource("1_k80uj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3g2xc")
 animation = &"walk_down"
-frame_progress = 0.901576
+frame_progress = 0.273406
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cakko")
