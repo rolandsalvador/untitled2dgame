@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
-@export var speed = 400 # How fast the player will move (pixels/sec).
-var screen_size # Size of the game window.
+# Originally 400
+@export var speed = 700 # How fast the player will move (pixels/sec).
+#var screen_size # Size of the game window.
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	screen_size = get_viewport_rect().size
+	#Find the size of the game window
+	#screen_size = get_viewport_rect().size
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -25,8 +28,10 @@ func _process(delta):
 	else:
 		$AnimatedSprite2D.stop()
 	
+	#Enables character movement
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	#Prevents character from leaving the screen
+	#position = position.clamp(Vector2.ZERO, screen_size)
 	
 	if velocity.x != 0 and Input.is_action_pressed("move_right"):
 		$AnimatedSprite2D.animation = "walk_right"
